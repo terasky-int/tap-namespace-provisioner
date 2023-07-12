@@ -1,0 +1,16 @@
+#@ load("@ytt:overlay", "overlay")
+#@ def customize():
+
+#! rewrite the default serviceaccount secrets
+#@overlay/match by=overlay.subset({"apiVersion": "v1", "kind": "ServiceAccount","metadata":{"name":"default"}}), expects="0+"
+---
+secrets:
+  #!- name: jenkins-creds
+  #!- name: prisma-creds
+  #!- name: carbon-black-creds
+  - name: cosign-key-pair
+  - name: registries-credentials
+  - name: git-creds
+imagePullSecrets:
+  - name: registries-credentials
+#@  end
