@@ -36,8 +36,11 @@ spec:
               pwd
               MVNW=mvnw
               GRADLE="build.gradle"
+              ls -al
               if [ -f "$MVNW" ]; then
                   chmod +x mvnw
+                  echo "Executing ./mvnw ============>"
+                  ls -al
                   ./mvnw test
               elif [ -f "$GRADLE" ]; then
                   gradle test --debug
