@@ -39,9 +39,9 @@ spec:
               ls -al
               if [ -f "$MVNW" ]; then
                   chmod +x mvnw
-                  echo "Executing ./mvnw ============>"
+                  echo "Executing mvn test ============>"
                   ls -al
-                  ./mvnw test
+                  mvn test
               elif [ -f "$GRADLE" ]; then
                   gradle test --debug
               else
