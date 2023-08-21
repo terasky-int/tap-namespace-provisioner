@@ -11,6 +11,7 @@ secrets:
   - name: cosign-key-pair
   - name: registries-credentials
   - name: git-creds
+  - name: github-creds
 imagePullSecrets:
   - name: registries-credentials
 #@  end
